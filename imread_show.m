@@ -1,6 +1,6 @@
 
 function [] = imread_show(i1)
-wd = '\\bki04\Segmentation\IF_Membrane\Correction\*.tif';
+wd = '\\bki04\Segmentation\IF_Membrane\ML_data\Component_Tiffs\*.tif';
 fnames = dir(wd);
 %
 %i1 = 2;

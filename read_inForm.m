@@ -4,7 +4,6 @@ function im = read_inForm(fname, layer)
     fname = replace(fname, 'seg','w_seg');
     fname = fullfile(wd,fname);
     %
-    im1 = imread(fname,11 + layer);
-    im = reshape(im1, [], 1);
+    im = imread(fname,11 + layer);
     %
 end
