@@ -1,41 +1,31 @@
-function app = comp_overlap(app,im1,level)
+function app = comp_overlap(app)
 %%
 % This function computes the overlaps and adds them to the appropriate rows
 % in the table
 %
 %%
-overlap = im1 > 0 & app.im_ML > 0;
-pairs = [im1(overlap), app.im_ML(overlap)];
-[ii, ~, kk] = unique(pairs, 'rows');
-pairs_cnt = [ii,accumarray(kk,1)];
-%
-idx1 = pairs_cnt(:,1);
-idx2 = pairs_cnt(:,2);
-%
-if level == 1
-        %
-        app.IF_table.overlap_L1(idx1) = pairs_cnt(:,3);
-        app.IF_table.pct_L1 = app.IF_table.overlap_L1...
-            ./ app.IF_table.n_pixels;
-        app.IF_table.pair_L1(idx1) = pairs_cnt(:,2);
-        %
-        app.ML_table.overlap_L1(idx2) = pairs_cnt(:,3);
-        app.ML_table.pct_L1 = app.ML_table.overlap_L1...
-            ./ app.ML_table.n_pixels;
-        app.ML_table.pair_L1(idx2) = pairs_cnt(:,1);
-        %
-elseif level == 2
-        %
-        app.IF_table.overlap_L2(idx1) = pairs_cnt(:,3);
-        app.IF_table.pct_L2 = app.IF_table.overlap_L2...
-            ./ app.IF_table.n_pixels;
-        app.IF_table.pair_L2(idx1) = pairs_cnt(:,2);
-        %
-        app.ML_table.overlap_L2(idx2) = pairs_cnt(:,3);
-        app.ML_table.pct_L2 = app.ML_table.overlap_L2...
-            ./ app.ML_table.n_pixels;
-        app.ML_table.pair_L2(idx2) = pairs_cnt(:,1);
-        %
+q = [];
+for level = 1:2
+    im1 = app.im_IF(:,:,level);
+    overlap = im1 > 0 & app.im_ML > 0;
+    pairs = [im1(overlap), app.im_ML(overlap)];
+    [ii, ~, kk] = unique(pairs, 'rows');
+    pairs_cnt = [ii,accumarray(kk,1)];
+    %
+    idx1 = pairs_cnt(:,1);
+    idx2 = pairs_cnt(:,2);
+    %
+    o_tbl_IF = crt_ovr_tbl(app,idx1,...
+        pairs_cnt(:,2) ,pairs_cnt(:,3), 'IF');
+    %
+    o_tbl_ML = crt_ovr_tbl(app,idx2,...
+        pairs_cnt(:,1) ,pairs_cnt(:,3), 'ML');
+    %
+    tbl = outerjoin(o_tbl_IF,o_tbl_ML,'MergeKeys',1);
+    %
+    tbl.IF_level = repmat(level, height(tbl),1);
+    q = [q;tbl];
 end
 %
+app.q = q;
 end

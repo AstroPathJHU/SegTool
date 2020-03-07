@@ -1,23 +1,25 @@
-function tbl = crt_ovr_tbl(app, cells_n)
+function tbl = crt_ovr_tbl(app,idx,pairs,cnt,tt)
 %%
-% intialize the table for the overlap computation
+% define the table with the overlaps in it
 %
 %%
-tbl = table();
-tbl.cellid = (1:length(cells_n))';
-tbl.cells = cells_n;
-[x,y] = cellfun(@(x)ind2sub([app.nRows,app.nCols],x),cells_n,'Uni',0);
-tbl.x = x;
-tbl.y = y;
-tbl.n_pixels = cellfun('length',cells_n);
+if strcmp(tt, 'ML')
+    tbl_in = app.ML_table;
+elseif strcmp(tt, 'IF')
+    tbl_in = app.IF_table;
+end
 %
-tbl.overlap_L1 = zeros(height(tbl),1);
-tbl.overlap_L2 = zeros(height(tbl),1);
+tbl = tbl_in(idx,:);
+tbl.([tt,'_overlap']) =  cnt;
+tbl.([tt,'_pct']) = double(tbl.([tt,'_overlap']))...
+    ./ tbl.([tt,'_n_pixels']);
+tbl.([tt,'_paired_w']) = pairs;
+tbl.cellid = (1:height(tbl))';
 %
-tbl.pct_L1 = zeros(height(tbl),1);
-tbl.pct_L2 = zeros(height(tbl),1);
-%
-tbl.pair_L1 = zeros(height(tbl),1);
-tbl.pair_L2 = zeros(height(tbl),1);
+if strcmp(tt, 'ML')
+    app.o_tbl_ML = tbl;
+elseif strcmp(tt, 'IF')
+    app.o_tbl_IF = tbl;
+end
 %
 end
