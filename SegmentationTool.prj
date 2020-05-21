@@ -8,9 +8,9 @@
       <file>${PROJECT_ROOT}\SegmentationTool_resources\icon_24.png</file>
       <file>${PROJECT_ROOT}\SegmentationTool_resources\icon_16.png</file>
     </param.icons>
-    <param.version>2.0</param.version>
+    <param.version>2.02</param.version>
     <param.authnamewatermark>Benjamin Green</param.authnamewatermark>
-    <param.email />
+    <param.email>bgreen42@jh.edu</param.email>
     <param.company>Astropath</param.company>
     <param.summary>This tool was developed to build a ground truth for cell segmentation in immunofluorescence data.</param.summary>
     <param.description>This program opens the machine learning segmentation for a specified images and loads the inform segementation of the corresponding image. The program also reads the component information from the inform segmentation image. The files must be in the specified format to find the corresponding images. The program then compares the cells between the two segmentation types and displays a cut out for each cell one at a time. The user can then specify whether they will choose the machine learning segmentation, the inform segmentation, or draw a new segmentation for the given cell.</param.description>
@@ -48,7 +48,6 @@
 	 -?  print help on how to use the application 
 	 input arguments</param.help.text>
     <unset>
-      <param.email />
       <param.guid />
       <param.installpath.string />
       <param.installpath.combo />
