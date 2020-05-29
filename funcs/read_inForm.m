@@ -1,8 +1,7 @@
-function im = read_inForm(fname, layer)
+function im = read_inForm(app, fname, layer)
     %
-    wd = '\\bki04\Segmentation\IF_Membrane\inform_data\Component_Tiffs';
-    fname = replace(fname, 'seg','w_seg');
-    fname = fullfile(wd,fname);
+    wd = [app.wd,'\inform_data\Component_Tiffs'];
+    fname = fullfile(wd,[fname, '_component_data_w_seg.tif']);
     %
     im = imread(fname,11 + layer);
     %

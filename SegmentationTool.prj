@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration build-checksum="3645544754" file="\\bki05\n$\bgcode2\matlab\SegTool\SegmentationTool.prj" location="\\bki05\n$\bgcode2\matlab\SegTool" name="SegmentationTool" preferred-package-location="\\bki05\n$\bgcode2\matlab\SegTool\SegmentationTool\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
+  <configuration build-checksum="3645544754" file="N:\bgcode2\matlab\SegTool\SegmentationTool.prj" location="N:\bgcode2\matlab\SegTool" name="SegmentationTool" preferred-package-location="\\bki05\n$\bgcode2\matlab\SegTool\SegmentationTool\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
     <param.appname>SegmentationTool</param.appname>
     <param.icon>${PROJECT_ROOT}\SegmentationTool_resources\icon.ico</param.icon>
     <param.icons>
@@ -8,7 +8,7 @@
       <file>${PROJECT_ROOT}\SegmentationTool_resources\icon_24.png</file>
       <file>${PROJECT_ROOT}\SegmentationTool_resources\icon_16.png</file>
     </param.icons>
-    <param.version>2.02</param.version>
+    <param.version>2.0.4</param.version>
     <param.authnamewatermark>Benjamin Green</param.authnamewatermark>
     <param.email>bgreen42@jh.edu</param.email>
     <param.company>Astropath</param.company>
@@ -48,6 +48,8 @@
 	 -?  print help on how to use the application 
 	 input arguments</param.help.text>
     <unset>
+      <param.authnamewatermark />
+      <param.email />
       <param.guid />
       <param.installpath.string />
       <param.installpath.combo />
@@ -87,9 +89,9 @@
       <file>${PROJECT_ROOT}\fullimageView.mlapp</file>
     </fileset.depfun>
     <build-deliverables>
-      <file location="${PROJECT_ROOT}\SegmentationTool\for_testing" name="SegmentationTool.exe" optional="false">\\bki05\n$\bgcode2\matlab\SegTool\SegmentationTool\for_testing\SegmentationTool.exe</file>
-      <file location="${PROJECT_ROOT}\SegmentationTool\for_testing" name="splash.png" optional="false">\\bki05\n$\bgcode2\matlab\SegTool\SegmentationTool\for_testing\splash.png</file>
-      <file location="${PROJECT_ROOT}\SegmentationTool\for_testing" name="readme.txt" optional="true">\\bki05\n$\bgcode2\matlab\SegTool\SegmentationTool\for_testing\readme.txt</file>
+      <file location="${PROJECT_ROOT}\SegmentationTool\for_testing" name="splash.png" optional="false">N:\bgcode2\matlab\SegTool\SegmentationTool\for_testing\splash.png</file>
+      <file location="${PROJECT_ROOT}\SegmentationTool\for_testing" name="SegmentationTool.exe" optional="false">N:\bgcode2\matlab\SegTool\SegmentationTool\for_testing\SegmentationTool.exe</file>
+      <file location="${PROJECT_ROOT}\SegmentationTool\for_testing" name="readme.txt" optional="true">N:\bgcode2\matlab\SegTool\SegmentationTool\for_testing\readme.txt</file>
     </build-deliverables>
     <workflow />
     <matlab>

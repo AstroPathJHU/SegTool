@@ -20,17 +20,21 @@ im = app.mem_dapi_im;
 %
 im = (225 .* asinh(2 .* im)) * col;
 %
+L_IF = im_IF(:,:,2) + im_IF(:,:,3);
+L_ML = im_ML;
 im2 = zeros(app.nRows * app.nCols,3);
 ii = reshape((L_IF > 0), [],1);
 im2(:,1) = .4 * 255 * double(ii);
 ii = reshape((L_ML > 0), [],1);
 im2(:,2) = .4 * 255 * double(ii);
+inp = a.pairid == 1865;
+ii = im_IF(:,:,2) == a.IF_cellid(inp);
+ii = reshape((ii > 0), [],1);
+im2(:,1) = 255 * double(ii);
 %
 im = im + im2;
 %
 im = reshape(im,app.nRows,app.nCols,3);
-
-
 imshow(uint8(im))
 
 end
