@@ -1,60 +1,56 @@
 %%
-% wd = 'Z:\Ben\Code\SegmentationTool\assessment\A';
-% imname = 'Liver_TMA_145_23_01.30.2020_[6435,55763]_comparison_seg_data'
+% app.wd = 'Z:\Ben\Code\SegmentationTool\assessment\A';
+% app.fname = 'Liver_TMA_145_23_01.30.2020_[6435,55763]_comparison_seg_data'
 %%
-function [x, im] = reload_overlap_table(wd, imname)
+function [app] = reload_overlap_table(app)
 %
-x = readtable([wd,'\',imname,'.csv']);
+% read the old table
 %
-im = [];
-for i1 = 1:6
-    im(:,:,i1) = imread([wd,'\',imname,'.tif'], i1);
+ofname = [app.wd,'\inform_data\Component_Tiffs\',app.fname,...
+    '_comparison_seg_data.csv'];
+x = readtable(ofname);
+%
+% convert old table format to new
+%
+if width(x) == 14
+    x.ground_level = ones(height(x),1);
 end
 %
-x.ML_cells = repmat({0},height(x),1);
-x.IF_cells = repmat({0},height(x),1);
-x.final_cells = repmat({0},height(x),1);
+ii = x.pairid == 0;
+x(ii, :) = [];
 %
-for level = 1:2
-    %
-    ii = x.IF_level == level;
-    L = im(:,:,level);
-    cells_n1 = x.ML_cellid(ii);
-    %
-    [~,iY,~] = unique(cells_n1, 'last');
-    for i1 = 1:length(iY)
-        c = find(L == iY(i1));
-        ii = x.ML_cellid == cells_n1(iY(i1));
-        x.ML_cells(ii) = {c};
-    end
-    %
-    ii = x.IF_level == level;
-    L = im(:,:,level + 2);
-    cells_n1 = x.IF_cellid(ii);
-    %
-    [~,iY,~] = unique(cells_n1, 'last');
-    for i1 = 1:length(iY)
-        c = find(L == iY(i1));
-        ii = x.IF_cellid == cells_n1(iY(i1));
-        x.IF_cells(ii) = {c};
-    end
-    %
-    ii = x.IF_level == level & x.include_cell == 3;
-    L = im(:,:,level + 4);
-    cells_n1 = x.cellid(ii);
-    %
-    Y = unique(cells_n1);
-    for i1 = 1:length(Y)
-        c = find(L == i1);
-        x.final_cells(Y(i1)) = {c};
-    end
-    %
-end
+% get SP cell objects
 %
-ii = x.include_cell == 2 | x.include_cell == 4;
-x.final_cells(ii) = x.ML_cells(ii);
+app.cells_n = label2idx(app.im_SP)';
+m1 = regionprops(app.im_SP(:,:,1),'centroid');
+app.tmp_mid = struct2cell(m1);
+app = crt_int_tbl(app, 'SP');
+app.SP_table = app.SP_table(:,{'SP_cellid','SP_cells'});
+x = outerjoin(x, app.SP_table,...
+    'Type','left','Keys',{'SP_cellid'},'MergeKeys',1);
 %
-ii = x.include_cell == 1;
-x.final_cells(ii) = x.IF_cells(ii);
+% get IF cell objects
+%
+app = getIFdistinct(app);
+app = crt_int_tbl(app, 'IF');
+app.IF_table = app.IF_table(:,{'IF_cellid','IF_cells'});
+x = outerjoin(x, app.IF_table,...
+    'Type','left','Keys',{'IF_cellid'},'MergeKeys',1);
+x = sortrows(x,'pairid','ascend');
+%
+% remove edge cells from the displays
+%
+app.q = x;
+rm_edge_cells(app, 2)
+%
+% add cell counter
+%
+x.counter = zeros(height(x),1);
+ii = x.cell_check > 0;
+x.counter(ii) = (1:length(find(ii)))';
+%
+app.overlap_table = x;
+%
+app = read_comp_im(app);
 %
 end
