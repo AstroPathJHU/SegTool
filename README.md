@@ -38,7 +38,7 @@ The segmentation status for annotators is kept in the Segmentation_eval.xlsx doc
 Input:
 - `wd`: the directory to the trainingimages where each annotator has a subfoler: 'SegmentationImages_PP' (where PP is the person's intials).
 - `P`: cell array containing the extensions after the '\_' on annotators annotation folder for each annotator that has completed the image of interest
-  - ex. for SegmentationImages_SS it would be {`SS`}
+  - ex. for SegmentationImages_SS it would be {'SS'}
 - `imname`: the image name up to the image coordinates
   - ex.  'Liver_TMA_145_23_01.30.2020_\[6435,55763]'
 - `N`: cell array containing the numeric ID from the NumericIDs.csv file which will be added as an extension to the final image
