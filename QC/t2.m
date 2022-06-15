@@ -1,4 +1,4 @@
-wd = '\\halo1\Taubelab\Ben\Code\SegmentationTool\training_images\SegmentationImages_';
+wd = '\\halo1\Taubelab\Ben\Code\SegmentationTool\training_images';
 %
 P = {'RW'};
 N = {'01'};

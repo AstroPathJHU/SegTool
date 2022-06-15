@@ -1,5 +1,5 @@
 %%
-% wd = 'Z:\Ben\Code\SegmentationTool\assessment';
+% wd = '\\halo1\Taubelab\Ben\Code\SegmentationTool\training_images';
 % P = {'A','G','H','S'};
 % imname = 'Liver_TMA_145_23_01.30.2020_[6435,55763]_comparison_seg_data'
 %%
@@ -27,9 +27,9 @@ t = table();
 L_out = [];
 %
 for i1 = 1:length(P)
-    app.IF_filename = [wd,P{i1},'\inform_data\Component_Tiffs\',...
+    app.IF_filename = [wd,'\SegmentationImages_', P{i1},'\inform_data\Component_Tiffs\',...
         imname,'_component_data_w_seg.tif'];
-    app.SP_filename = [wd,P{i1},'\superpixel\Component_Tiffs\',...
+    app.SP_filename = [wd,'\SegmentationImages_',P{i1},'\superpixel\Component_Tiffs\',...
         imname,'_component_data_seg.tif'];
     app.wd = [wd,P{i1}];
     app.seg_col = 225;
