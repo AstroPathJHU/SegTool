@@ -41,12 +41,12 @@ for i1 = 1:length(P)
     ds.ImageWidth = app.nCols;
     L = compile_applied_seg_label(app);
     %
-    nn = num2str(i1);
+    nn = N{i1};
     if length(nn) < 2
         nn = ['0',nn];
     end
     %
-    ii = Tiff(['\\halo1\Taubelab\Ben\Code\SegmentationTool\assessment',...
+    ii = Tiff([wd, '\..\upkeep',...
         '\Results\',imname,'_comparison_seg_data_final_',nn,'.tif'],'w');
     ii.setTag(ds)
     d = uint16(L(:,:,1));
@@ -67,7 +67,7 @@ for i1 = 1:length(P)
     ot.multinuc = t4(:,1);
     ii = ~ismember(ot.cellid, unique(L));
     ot(ii,:) = [];
-    writetable(ot, ['\\halo1\Taubelab\Ben\Code\SegmentationTool\assessment',...
+    writetable(ot, [wd, '\..\upkeep',...
         '\Results\',imname,'_comparison_seg_data_final_',nn,'.csv'])
     %
     [out] = filter_results(app);

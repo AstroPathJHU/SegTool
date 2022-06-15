@@ -53,8 +53,8 @@ idx = app.overlap_table.pairid(ii);
 %
 ii1 = idx > length(d_cells_n1);
 if any(ii1)
-    app.overlap_table(ismember(app.overlap_table.pairid,...
-        idx(ii1)) ,:) = [];
+    ii2 = ismember(app.overlap_table.pairid,idx(ii1));
+    app.overlap_table.class_selection(ii2) = -1;
     ii = app.overlap_table.class_selection == 3;
     idx = app.overlap_table.pairid(ii);
 end
