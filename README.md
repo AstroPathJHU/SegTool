@@ -44,7 +44,7 @@ Input:
 - `N`: cell array containing the numeric ID from the NumericIDs.csv file which will be added as an extension to the final image
  
 Output:
-a combined image in a *wd\..\upkeep\Results* folder with the segmentation label images named by the image names and appended with *_comparison_seg_data_final_01*. Also includes a .csv file with the MultiNuc flag status indicating if the user flagged the cell as being multi-nucleated. 
+a combined image in a *wd\\..\upkeep\Results* folder with the segmentation label images named by the image names and appended with *_comparison_seg_data_final_01*. Also includes a .csv file with the MultiNuc flag status indicating if the user flagged the cell as being multi-nucleated. 
 
 Examples for running this code are found in the t1.m, t2.m, and t3.m files where each of the previous results were run and generated. 
 
