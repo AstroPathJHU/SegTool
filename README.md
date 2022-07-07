@@ -36,7 +36,7 @@ The segmentation status for annotators is kept in the Segmentation_eval.xlsx doc
 `gather_simil(wd, P, imname, N)` 
 
 Input:
-- `wd`: the directory to the trainingimages.
+- `wd`: the directory to the trainingimages where each annotator has a subfoler: 'SegmentationImages_PP' (where PP is the person's intials).
 - `P`: cell array containing the extensions after the '\_' on annotators annotation folder for each annotator that has completed the image of interest
   - ex. for SegmentationImages_SS it would be {'SS'}
 - `imname`: the image name up to the image coordinates
