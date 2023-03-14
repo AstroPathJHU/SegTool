@@ -27,7 +27,7 @@ There are two ways to launch the tool.
 - [6. File Structure](#6-file-structure "Title")
 - [7. Usage](#7-usage "Title")
 - [8. Saving Output](#8-saving-output "Title")
-- [9. Combing Ground Truth Results](#9-combing-ground-truth-results "Title")
+- [9. Combing Ground Truth Results](#9-combining-ground-truth-results "Title")
 - [10. Potential Edits](#10-potential-edits "Title")
 
 ## 4. Background
@@ -38,11 +38,16 @@ There are two ways to launch the tool.
 
 ## 7. Usage
 ### 7.1 Launching and getting started
-1.	Launch the program either by double clicking on the icon: ![Figure1](SegmentationTool_resources/Image 4.1.1.png) or by locating the SegmentationTool.exe (see above in [Getting Started](#2-getting-started "Title")).
-    1. An icon will appear on the windows tool bar: (4.1.2)
-    1. A loading visual will appear on the desktop: (4.1.3)
+1.	Launch the program either by double clicking on the icon:  
+![Figure1](SegmentationTool_resources/Image4.1.1.png)  
+or by locating the SegmentationTool.exe (see above in [Getting Started](#2-getting-started "Title")).
+    1. An icon will appear on the windows tool bar:  
+![Figure1](SegmentationTool_resources/Image4.1.2.png)
+    1. A loading visual will appear on the desktop:  
+![Figure1](SegmentationTool_resources/Image4.1.3.png)
     1. The visual and icon may disappear then the app will open. This may take a few minutes and is normal. 
-2.	Click on the ‘Load new image’ button: (4.1.4)
+2.	Click on the ‘Load new image’ button:  
+![Figure1](SegmentationTool_resources/Image4.1.14.png)
 3.	A windows file explorer should open, navigate to either the <SP_tree> or <IF_tree>folder and open the <SP_Image> or  <IF_Image> of interest.
 4.	If the file structure was set up appropriately, the program will find the corresponding segmentation output image, otherwise it will throw an error.
 5.	The segmentation overlap on the images will be computed or, if it exists, the corresponding overlap image and .csv file comparison will be loaded for the image.
@@ -51,8 +56,8 @@ There are two ways to launch the tool.
     1.	On the left will be used to display the machine learning or superpixel segmentation and the right will be used to display the inform segmentation
 ### 7.2 Selecting a segmentation approach
 Once the first cell appears, the figure title will be populated with the image name and the cell pair count. 
-1.	Select one of the 7 options in the classification box on the right panel (only one can be selected at a time and when selected the option will turn green):
-(4.1.5)
+1.	Select one of the 7 options in the classification box on the right panel (only one can be selected at a time and when selected the option will turn green):  
+![Figure1](SegmentationTool_resources/Image4.1.4.png)
     1.	‘A’: the image segmentation on the left or ‘A’ side panel is more correct
     1.	‘B’: the image segmentation on the right or ‘B’ side panel is more correct
     1.	‘A=B’: both segmentations are correct
@@ -62,27 +67,27 @@ Once the first cell appears, the figure title will be populated with the image n
     1.	‘Draw on Mem’: this option allows for drawing a segmentation on the ‘B’ DAPI + Membrane image. (Drawing explained below)
 2.	Select ‘Next cell’
     1.	This jumps to the next cell that has not yet been reviewed 
-       1.	Sometimes this means skipping cells
-(4.1.6)
+       1.	Sometimes this means skipping cells  
+![Figure1](SegmentationTool_resources/Image4.1.5.png)
 ### 7.3 Additional movement buttons
 1.	‘<: this goes back one cell in the numeric ordering (shown in the figure header at the top of the page)
 2.	‘>’: this moves forward a single cell and a single cell only in the numeric ordering. This differs from the ‘Next cell’ button by ignoring which cells have already been checked off.
 3.	‘Jump to cell’: this button jumps to the cell pair entered in the input box beside it. This can be used to ask for confirmation or review the segmentation of a given cell pair.
 ### 7.4 Display buttons
-1.	The brightness and the contrast of the DAPI and Membrane can be scaled separately. Select the marker of interest, then vary the appropriate parameter with the slider. Only one option can be selected at a time. When the option is selected the button turns green.
-(4.1.7)
+1.	The brightness and the contrast of the DAPI and Membrane can be scaled separately. Select the marker of interest, then vary the appropriate parameter with the slider. Only one option can be selected at a time. When the option is selected the button turns green.  
+![Figure1](SegmentationTool_resources/Image4.1.6.png)
 2.	‘Toggle Segmentation’: Toggles the segmentation on and off for all four image stamps. The segmentation show is the original segmentation for either ‘A’ or ‘B’ respectively.
 3.	‘Applied Seg’: Toggles the already applied segmentation on and off for all four image stamps. This shows the reviewed cells or the cells in the joint overlap group (if it has not been removed). 
 ### 7.5 Additional flagging buttons
-	Any combination of these options can be applied to a give cell pair. 
-(4.1.8)
+Any combination of these options can be applied to a give cell pair.  
+![Figure1](SegmentationTool_resources/Image4.1.7.png)
 1.	‘Flag’: adds a review flag to this cell. When the segmentation is finished and handed off for statistics or review by another person they can review these cells for edits. 
 2.	‘Multi Nuc’: Indicates that the cell pair is part of a multi nucleated  cell
 3.	‘Add cell’: allows the user to add a new cell, see below
 ### 7.6 Add cell window
 1.	Opens the ‘Add cell window’, the main app will be shaded in and not usable when this window opens. 
-   a.	The first time this option is selected the following dialog with directions appears over the window.
-(4.1.9)
+   a.	The first time this option is selected the following dialog with directions appears over the window.  
+![Figure1](SegmentationTool_resources/Image4.1.8.png)
     1.	Follow these directions to use: 
         1.	Click on the ‘Draw’ button and wait for it to turn green in that UI to draw a cell. 
         1. To add a new cell click ‘add another cell’, wait for that button to turn green then draw another cell
@@ -91,8 +96,8 @@ Once the first cell appears, the figure title will be populated with the image n
             1.	except now there is an option to toggle only the membrane stain (with ‘Show Mem’ check box), ‘Seg A’ and ‘Seg B’
             1.	note that the applied segmentation is updated in real time.
          1.	To redraw a cell, close the current cell by right clicking in the drawing window (see 4.7 for additional drawing notes), then click on the ‘Draw’ button again
-         1.	The number of cells drawn are recorded in the window header
-(4.1.10)
+         1.	The number of cells drawn are recorded in the window header  
+![Figure1](SegmentationTool_resources/Image4.1.9.png)
 1.	Once finished adding cells, select either ‘Accept’ to accept all drawn cells or ‘Reject’ to reject drawn cells. A confirmation dialog will open either way
     1.	Reject confirmation dialog options
         1.	for the reject dialog, if only one cell is drawn the dialog just asks for confirmation
@@ -117,23 +122,23 @@ When one of the drawing options is selected
 -	Since the cells are usually order by location, segmentation on adjacent cells may show up in sequential ordering. Often this means that over-segmented or under-segmented examples are directly next to each other. If one of the approaches correctly defines the over-segmented cell, it is safe to reject the second cell that appears or select the correct version again.
 
 EX. 
-Cell1:			Cell2:
-(4.1.11)
+Cell1:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cell2:  
+![Figure1](SegmentationTool_resources/Image4.1.10.png)
 
 ### 7.9 Highly overlapping pairs
-When the overlaps are computed, some of the cells are computationally determined to be the same cells, these are the so-called ‘highly overlapping pairs’. It is assumed that these objects, because of their agreement are correctly identifying the cell of interest. A random sample of these pairs are filter back into the cells for review to assess the viability of this criteria for each image. If 20% of these sampled pairs have disagreement (were not defined as ‘A=B’) then this dialog will appear and the rest of these highly overlapped pairs are added back in for the user to review. The cell objects are also removed from the applied segmentation.
-(4.1.12)
+When the overlaps are computed, some of the cells are computationally determined to be the same cells, these are the so-called ‘highly overlapping pairs’. It is assumed that these objects, because of their agreement are correctly identifying the cell of interest. A random sample of these pairs are filter back into the cells for review to assess the viability of this criteria for each image. If 20% of these sampled pairs have disagreement (were not defined as ‘A=B’) then this dialog will appear and the rest of these highly overlapped pairs are added back in for the user to review. The cell objects are also removed from the applied segmentation.  
+![Figure1](SegmentationTool_resources/Image4.1.11.png)
  
 
 ### 7.10 Finishing an image
 1.	When all cells in an image are reviewed, a prompt will open telling the user that all cell pairs have been review and that it is now time to review the whole image
     1.	click ‘ok’
-2.	A new window will open, as below, which shows the whole image with similar drawing features as the ‘Add cell’ window. You will be able to see the applied segmentation on the whole image and identify any cells that may have been missed by both algorithms. 
-(4.1.13)
+2.	A new window will open, as below, which shows the whole image with similar drawing features as the ‘Add cell’ window. You will be able to see the applied segmentation on the whole image and identify any cells that may have been missed by both algorithms.  
+![Figure1](SegmentationTool_resources/Image4.1.12.png)
     1.	if you have not used the ‘Add cell’ button in this session the dialog from 4.6.1.a will appear.
 
-3.	There will be an additional option for a ‘Masked View’, this subtracts the ‘applied seg’ cells out of the view, leaving only pixels that have not been segmented. This view is very helpful in identifying missed objects
-(4.1.14)
+3.	There will be an additional option for a ‘Masked View’, this subtracts the ‘applied seg’ cells out of the view, leaving only pixels that have not been segmented. This view is very helpful in identifying missed objects  
+![Figure1](SegmentationTool_resources/Image4.1.13.png)
 4.	Add all the additional cells desired until the whole image has been identified. 
 5.	Select ‘Accept’ to accept all cells or ‘Reject’ to reject them
     1.	see 4.6.1 for more info on these options
@@ -142,10 +147,10 @@ When the overlaps are computed, some of the cells are computationally determined
 ## 8. Saving Output
 ### 8.1 Saving and closing
 There are a few ways to save progress. 
-1.	The first way is to select the ‘Save Table’ button at the bottom of the right panel:
-(5.1.1)  
-2.	The second way is during the closing of the app. Close the app by clicking the ‘X’ in the upper right corner. A new closing dialog will appear:
-(5.1.2)
+1.	The first way is to select the ‘Save Table’ button at the bottom of the right panel:  
+![Figure1](SegmentationTool_resources/Image5.1.1.png)
+2.	The second way is during the closing of the app. Close the app by clicking the ‘X’ in the upper right corner. A new closing dialog will appear:  
+![Figure1](SegmentationTool_resources/Image5.1.2.png)
     1.	 ‘Save & Close’: saves progress and closes the app
     1.	‘Don’t Save & Close’: will not save progress and closes the app
     1.	‘Cancel’ or clicking the ‘X’ from this box will cancel the closing dialog and return to the app for segmentation
@@ -205,7 +210,7 @@ The tool saves two files, both files are labeled with the file indication ‘com
                 1.	(6): added \ new cell
                 1.	(-1): neither segmentation chosen and not drawn
                 1.	(-2): artifact
-        xiii.	cell_check
+        1.	cell_check
             1.	Whether or not that cell will be reviewed
             1.	Data type: Uint8
             1.	Opts:
