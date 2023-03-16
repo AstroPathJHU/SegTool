@@ -31,10 +31,35 @@ There are two ways to launch the tool.
 - [10. Potential Edits](#10-potential-edits "Title")
 
 ## 4. Background
+Robust cell segmentation in mIF imagery is vital for assessing the performance of different biomarkers in the TME. However, commonly available software for segmentation is both inefficient and inaccurate.  We aim to develop new algorithms for cell segmentation, either through machine learning or neural network methods. In order to train a neural network and assess the accuracy of any new approach to segmentation we will need a large dataset of ‘ground truth’ annotated cell objects. The manual annotation of every cell in hundreds of images required for a comprehensive ‘ground truth’ dataset is an exhaustive and time consuming process. 
+
+Here we present a tool to aid in the development of such a ‘ground truth’ dataset for mIF images to hopefully alleviate some of these travails. The tool compares cells identified in Seyoun Park’s super pixel cell segmentation to those identified by the so-called ‘multi-pass’ inForm cell segmentation. (We use SP and IF respectively to denote the two algorithms throughout). The tool displays matching cell pairs, determined by per pixel overlap, back to the user one at a time in a user interface (UI). The user is prompted to select which version performed more correctly, along with a number of other different options described herein. This document begins with a description on the workflow steps take in the UI, then designates the necessary directory structure of the image outputs, provides a step-by-step instruction for using the tool, and finally defines the comparison output files. 
 
 ## 5. Workflow
 
 ## 6. File Structure
+The program relies that the images files are set up in a unique file structure which is modeled after the Clinical Specimen directory structure, in order to find the corresponding inform images. <br>
+In summary, there should be two adjacent directories for a given slide as follows: <br>
+Each folder should contain their own respective ‘Component_Tiffs’ folder, the images for each algorithm should reside in their respective folder. <br>
+As a more distinct definition for this structure we first split the directory tree into 4 main parts which will be labeled “root”, “slideID”, ”SP_tree”, and ”IF_tree”. <br>
+```<root>\<slideID>\<SP_tree>\<SP_Image> OR <root>\<slideID>\<IF_tree>\<IF_Image>```<br>
+EX. “\\bki04\Segmentation\TMAs\Liver_TMA_145_23_01.30.2020\superpixel\Component_Tiffs\Liver_TMA_145_23_01.30.2020_[6435,55763]_component_data_seg.tif”
+```
+<root>: “\\bki04\Segmentation\TMAs”
+<slideID>: “Liver_TMA_145_23_01.30.2020”
+<SP _tree>: “superpixel\Component_Tiffs”
+<SP _Image>: “Liver_TMA_145_23_01.30.2020_[6435,55763]_component_data_seg.tif”
+```
+For the corresponding inForm image, replace the <SP_tree> with the <IF_tree> as follows: <br>
+EX. “\\bki04\Segmentation\TMAs\Liver_TMA_145_23_01.30.2020\inform_data\Component_Tiffs\Liver_TMA_145_23_01.30.2020_[6435,55763]_component_data_w_seg.tif”
+```
+<root>: “\\bki04\Segmentation\TMAs”
+<slideID>: “Liver_TMA_145_23_01.30.2020”
+<IF_tree>: “inform_data\Component_Tiffs”
+<IF_Image>: “Liver_TMA_145_23_01.30.2020_[6435,55763]_component_data_w_seg.tif”
+```
+
+**Note: Be sure to use the component_data_w_seg.tif for the IF image or the software will throw an error.**
 
 ## 7. Usage
 ### 7.1 Launching and getting started
