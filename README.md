@@ -23,23 +23,20 @@ There are two ways to launch the tool.
 - [2. Getting Started](#2-getting-started "Title")
 - [3. Contents](#3-contents "Title")
 - [4. Background](#4-background "Title")
-- [5. Workflow](#5-workflow "Title")
-- [6. File Structure](#6-file-structure "Title")
-- [7. Usage](#7-usage "Title")
-- [8. Saving Output](#8-saving-output "Title")
-- [9. Combing Ground Truth Results](#9-combining-ground-truth-results "Title")
-- [10. Potential Edits](#10-potential-edits "Title")
+- [5. File Structure](#5-file-structure "Title")
+- [6. Usage](#6-usage "Title")
+- [7. Saving Output](#7-saving-output "Title")
+- [8. Combing Ground Truth Results](#8-combining-ground-truth-results "Title")
+- [9. Potential Edits](#9-potential-edits "Title")
 
 ## 4. Background
 Robust cell segmentation in mIF imagery is vital for assessing the performance of different biomarkers in the TME. However, commonly available software for segmentation is both inefficient and inaccurate.  We aim to develop new algorithms for cell segmentation, either through machine learning or neural network methods. In order to train a neural network and assess the accuracy of any new approach to segmentation we will need a large dataset of ‘ground truth’ annotated cell objects. The manual annotation of every cell in hundreds of images required for a comprehensive ‘ground truth’ dataset is an exhaustive and time consuming process. 
 
 Here we present a tool to aid in the development of such a ‘ground truth’ dataset for mIF images to hopefully alleviate some of these travails. The tool compares cells identified in Seyoun Park’s super pixel cell segmentation to those identified by the so-called ‘single-pass’ inForm cell segmentation. (We use SP and IF respectively to denote the two algorithms throughout). The tool displays matching cell pairs, determined by per pixel overlap, back to the user one at a time in a user interface (UI). The user is prompted to select which version performed more correctly, along with a number of other different options described herein. This document begins with a description on the workflow steps take in the UI, then designates the necessary directory structure of the image outputs, provides a step-by-step instruction for using the tool, and finally defines the comparison output files. 
 
-## 5. Workflow
-
-## 6. File Structure
+## 5. File Structure
 The program relies that the images files are set up in a unique file structure which is modeled after the Clinical Specimen directory structure, in order to find the corresponding inform images. In summary, there should be two adjacent directories for a given slide as follows: <br>
-![Figure1](SegmentationTool_resources/5.1.png)<br>
+![Figure1](SegmentationTool_resources/5.1.png)<br><br>
 Each folder should contain their own respective ‘Component_Tiffs’ folder, the images for each algorithm should reside in their respective folder. <br><br>
 As a more distinct definition for this structure we first split the directory tree into 4 main parts which will be labeled “root”, “slideID”, ”SP_tree”, and ”IF_tree”. <br>
 ```<root>\<slideID>\<SP_tree>\<SP_Image> OR <root>\<slideID>\<IF_tree>\<IF_Image>```<br><br>
@@ -61,8 +58,8 @@ EX. “\\bki04\Segmentation\TMAs\Liver_TMA_145_23_01.30.2020\inform_data\Compone
 
 **Note: Be sure to use the component_data_w_seg.tif for the IF image or the software will throw an error.**
 
-## 7. Usage
-### 7.1 Launching and getting started
+## 6. Usage
+### 6.1 Launching and getting started
 1.	Launch the program either by double clicking on the icon:  
 ![Figure1](SegmentationTool_resources/Image4.1.1.png)  
 or by locating the SegmentationTool.exe (see above in [Getting Started](#2-getting-started "Title")).
@@ -79,7 +76,7 @@ or by locating the SegmentationTool.exe (see above in [Getting Started](#2-getti
 6.	The first cell for comparison will appear in the UI as a set of four images.
     1.	The top images will contain only the DAPI signal, the bottom images will contain the DAPI and the Membrane signal
     1.	On the left will be used to display the machine learning or superpixel segmentation and the right will be used to display the inform segmentation
-### 7.2 Selecting a segmentation approach
+### 6.2 Selecting a segmentation approach
 Once the first cell appears, the figure title will be populated with the image name and the cell pair count. 
 1.	Select one of the 7 options in the classification box on the right panel (only one can be selected at a time and when selected the option will turn green):  
 ![Figure1](SegmentationTool_resources/Image4.1.4.png)
@@ -94,22 +91,22 @@ Once the first cell appears, the figure title will be populated with the image n
     1.	This jumps to the next cell that has not yet been reviewed 
        1.	Sometimes this means skipping cells  
 ![Figure1](SegmentationTool_resources/Image4.1.5.png)
-### 7.3 Additional movement buttons
+### 6.3 Additional movement buttons
 1.	‘<: this goes back one cell in the numeric ordering (shown in the figure header at the top of the page)
 2.	‘>’: this moves forward a single cell and a single cell only in the numeric ordering. This differs from the ‘Next cell’ button by ignoring which cells have already been checked off.
 3.	‘Jump to cell’: this button jumps to the cell pair entered in the input box beside it. This can be used to ask for confirmation or review the segmentation of a given cell pair.
-### 7.4 Display buttons
+### 6.4 Display buttons
 1.	The brightness and the contrast of the DAPI and Membrane can be scaled separately. Select the marker of interest, then vary the appropriate parameter with the slider. Only one option can be selected at a time. When the option is selected the button turns green.  
 ![Figure1](SegmentationTool_resources/Image4.1.6.png)
 2.	‘Toggle Segmentation’: Toggles the segmentation on and off for all four image stamps. The segmentation show is the original segmentation for either ‘A’ or ‘B’ respectively.
 3.	‘Applied Seg’: Toggles the already applied segmentation on and off for all four image stamps. This shows the reviewed cells or the cells in the joint overlap group (if it has not been removed). 
-### 7.5 Additional flagging buttons
+### 6.5 Additional flagging buttons
 Any combination of these options can be applied to a give cell pair.  
 ![Figure1](SegmentationTool_resources/Image4.1.7.png)
 1.	‘Flag’: adds a review flag to this cell. When the segmentation is finished and handed off for statistics or review by another person they can review these cells for edits. 
 2.	‘Multi Nuc’: Indicates that the cell pair is part of a multi nucleated  cell
 3.	‘Add cell’: allows the user to add a new cell, see below
-### 7.6 Add cell window
+### 6.6 Add cell window
 1.	Opens the ‘Add cell window’, the main app will be shaded in and not usable when this window opens. 
    a.	The first time this option is selected the following dialog with directions appears over the window.  
 ![Figure1](SegmentationTool_resources/Image4.1.8.png)
@@ -127,7 +124,7 @@ Any combination of these options can be applied to a give cell pair.
     1.	Reject confirmation dialog options
         1.	for the reject dialog, if only one cell is drawn the dialog just asks for confirmation
         1.	for the reject dialog, if more than one cell is drawn the dialog asks if all drawn cells should be deleted or only the last cell drawn
-### 7.7 Drawing feature
+### 6.7 Drawing feature
 When one of the drawing options is selected
 1.	Move the cursor over the corresponding image (DAPI or Membrane + DAPI). 
 2.	There are two options for drawing the segmentation. 
@@ -141,7 +138,7 @@ When one of the drawing options is selected
         1.	Then move the mouse and left click again
         1.	Do this all the way around the cell, creating ‘waypoints’ 
         1.	right click on the mouse to end the segmentation
-### 7.8 Additional notes for segmentation selection
+### 6.8 Additional notes for segmentation selection
 -	We are segmenting the nuclei only at this point
 - 	If one of the two segmentations are correct select that segmentation before rejecting or drawing a new segmentation.
 -	Since the cells are usually order by location, segmentation on adjacent cells may show up in sequential ordering. Often this means that over-segmented or under-segmented examples are directly next to each other. If one of the approaches correctly defines the over-segmented cell, it is safe to reject the second cell that appears or select the correct version again.
@@ -150,12 +147,12 @@ EX.
 Cell1:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cell2:  
 ![Figure1](SegmentationTool_resources/Image4.1.10.png)
 
-### 7.9 Highly overlapping pairs
+### 6.9 Highly overlapping pairs
 When the overlaps are computed, some of the cells are computationally determined to be the same cells, these are the so-called ‘highly overlapping pairs’. It is assumed that these objects, because of their agreement are correctly identifying the cell of interest. A random sample of these pairs are filter back into the cells for review to assess the viability of this criteria for each image. If 20% of these sampled pairs have disagreement (were not defined as ‘A=B’) then this dialog will appear and the rest of these highly overlapped pairs are added back in for the user to review. The cell objects are also removed from the applied segmentation.  
 ![Figure1](SegmentationTool_resources/Image4.1.11.png)
  
 
-### 7.10 Finishing an image
+### 6.10 Finishing an image
 1.	When all cells in an image are reviewed, a prompt will open telling the user that all cell pairs have been review and that it is now time to review the whole image
     1.	click ‘ok’
 2.	A new window will open, as below, which shows the whole image with similar drawing features as the ‘Add cell’ window. You will be able to see the applied segmentation on the whole image and identify any cells that may have been missed by both algorithms.  
@@ -169,8 +166,8 @@ When the overlaps are computed, some of the cells are computationally determined
     1.	see 4.6.1 for more info on these options
 
 
-## 8. Saving Output
-### 8.1 Saving and closing
+## 7. Saving Output
+### 7.1 Saving and closing
 There are a few ways to save progress. 
 1.	The first way is to select the ‘Save Table’ button at the bottom of the right panel:  
 ![Figure1](SegmentationTool_resources/Image5.1.1.png)
@@ -181,7 +178,7 @@ There are a few ways to save progress.
     1.	‘Cancel’ or clicking the ‘X’ from this box will cancel the closing dialog and return to the app for segmentation
 3.	The UI will also save the current result if a new image is loaded into the UI
 When the tool saves, a saving progress bar will open over the UI. The UI will not be usable while the save is operating and will appear greyed out. Wait for the UI to finish saving before closing or logging off. 
-### 8.2 Image Output
+### 7.2 Image Output
 The tool saves two files, both files are labeled with the file indication ‘comparison_seg_data’ after the image name. The first file is a csv file with 14 column headers, the second is a tiff file with 2 image layers.
 1.	Csv file:
     1.	This file contains information on each cell object in the image 
@@ -249,10 +246,10 @@ Note: Cells can be repeated for each corresponding cell they overlap over 10% wi
     1.	Opts:
         1.	Cell objects that were draw in the UI, values correspond to the pairid’s in the table above
         1.	The applied segmentation matrix, a binary mask only used to create a visual display
-### 8.3 Rebuilding the label matrix
+### 7.3 Rebuilding the label matrix
 To rebuild the label matrix one must read in the superpixel segmentation mask and the inform segmentation mask. Select the cells for each pairid using corresponding cell selection value. For IF or SP use the cellid values to located to cells. For drawn cells, use layer 1 of the ‘comparison_seg_data.tif’ image.  Currently this is done in numeric pairid order, meaning that if a cell later in the pairs, overlaps with another, it will override the previous pairid.
 
-## 9. Combining Ground Truth Results
+## 8. Combining Ground Truth Results
 The segmentation status for annotators is kept in the Segmentation_eval.xlsx document in the notes folder of the repo. Numeric ids can be found in the NumericIDs.csv file. To combine results run `gather_simil()` from the *QC* repo directory on the image directory. 
 
 `gather_simil(wd, P, imname, N)` 
@@ -272,7 +269,7 @@ Examples for running this code are found in the t1.m, t2.m, and t3.m files where
 
 To cut the large images into smaller images using the `cut_big_image` function in the QC folder. Which takes in a directory with the superpixel and component_tiff subfolders as described in section 6 and an image name as desribed for `gather_simil`. 
 
-## 10. Potential Edits
+## 9. Potential Edits
 ### edits for membrane segmentation
 The code should be edited to add a dialog box to use membrane or nuclear segmentation. This dialog box should change the headers *current nuclear object* and extract the information from different layers in the superpixel and inform data. We should also append '\_mem' to the output image files from the tool (both when reading and writing). 
 
