@@ -39,7 +39,7 @@ Here we present a tool to aid in the development of such a ‘ground truth’ da
 
 ## 6. File Structure
 The program relies that the images files are set up in a unique file structure which is modeled after the Clinical Specimen directory structure, in order to find the corresponding inform images. In summary, there should be two adjacent directories for a given slide as follows: <br>
-<br>
+![Figure1](SegmentationTool_resources/5.1.png)
 Each folder should contain their own respective ‘Component_Tiffs’ folder, the images for each algorithm should reside in their respective folder. <br><br>
 As a more distinct definition for this structure we first split the directory tree into 4 main parts which will be labeled “root”, “slideID”, ”SP_tree”, and ”IF_tree”. <br>
 ```<root>\<slideID>\<SP_tree>\<SP_Image> OR <root>\<slideID>\<IF_tree>\<IF_Image>```<br><br>
