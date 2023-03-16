@@ -38,11 +38,11 @@ Here we present a tool to aid in the development of such a ‘ground truth’ da
 ## 5. Workflow
 
 ## 6. File Structure
-The program relies that the images files are set up in a unique file structure which is modeled after the Clinical Specimen directory structure, in order to find the corresponding inform images. <br>
-In summary, there should be two adjacent directories for a given slide as follows: <br>
-Each folder should contain their own respective ‘Component_Tiffs’ folder, the images for each algorithm should reside in their respective folder. <br>
+The program relies that the images files are set up in a unique file structure which is modeled after the Clinical Specimen directory structure, in order to find the corresponding inform images. In summary, there should be two adjacent directories for a given slide as follows: <br>
+<br>
+Each folder should contain their own respective ‘Component_Tiffs’ folder, the images for each algorithm should reside in their respective folder. <br><br>
 As a more distinct definition for this structure we first split the directory tree into 4 main parts which will be labeled “root”, “slideID”, ”SP_tree”, and ”IF_tree”. <br>
-```<root>\<slideID>\<SP_tree>\<SP_Image> OR <root>\<slideID>\<IF_tree>\<IF_Image>```<br>
+```<root>\<slideID>\<SP_tree>\<SP_Image> OR <root>\<slideID>\<IF_tree>\<IF_Image>```<br><br>
 EX. “\\bki04\Segmentation\TMAs\Liver_TMA_145_23_01.30.2020\superpixel\Component_Tiffs\Liver_TMA_145_23_01.30.2020_[6435,55763]_component_data_seg.tif”
 ```
 <root>: “\\bki04\Segmentation\TMAs”
@@ -50,7 +50,7 @@ EX. “\\bki04\Segmentation\TMAs\Liver_TMA_145_23_01.30.2020\superpixel\Componen
 <SP _tree>: “superpixel\Component_Tiffs”
 <SP _Image>: “Liver_TMA_145_23_01.30.2020_[6435,55763]_component_data_seg.tif”
 ```
-For the corresponding inForm image, replace the <SP_tree> with the <IF_tree> as follows: <br>
+For the corresponding inForm image, replace the <SP_tree> with the <IF_tree> as follows: <br><br>
 EX. “\\bki04\Segmentation\TMAs\Liver_TMA_145_23_01.30.2020\inform_data\Component_Tiffs\Liver_TMA_145_23_01.30.2020_[6435,55763]_component_data_w_seg.tif”
 ```
 <root>: “\\bki04\Segmentation\TMAs”
