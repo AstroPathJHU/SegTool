@@ -8,7 +8,7 @@
       <file>${PROJECT_ROOT}\SegmentationTool_resources\icon_24.png</file>
       <file>${PROJECT_ROOT}\SegmentationTool_resources\icon_16.png</file>
     </param.icons>
-    <param.version>4.0.0</param.version>
+    <param.version>4.0.1</param.version>
     <param.authnamewatermark>Benjamin Green</param.authnamewatermark>
     <param.email>bgreen42@jh.edu</param.email>
     <param.company>Astropath</param.company>
