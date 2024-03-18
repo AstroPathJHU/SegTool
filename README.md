@@ -84,18 +84,18 @@ or by locating the SegmentationTool.exe (see above in [Getting Started](#2-getti
 ### 6.2 Selecting a segmentation approach
 Once the first cell appears, the figure title will be populated with the image name and the cell pair count. 
 1.	Select one of the 7 options in the classification box on the right panel (only one can be selected at a time and when selected the option will turn green):  
-![Figure1](SegmentationTool_resources/readme_images/classifications_panel.png)
+![Figure1](SegmentationTool_resources/readme_images/classifications_panel.PNG)
     1.	‘A’: the image segmentation on the left or ‘A’ side panel is more correct
     1.	‘B’: the image segmentation on the right or ‘B’ side panel is more correct
     1.	‘A=B’: both segmentations are correct
     1.	‘Neither’: This cell is thrown out for some other reason, both segmentations failed and a new cell cannot be drawn on
     1.	‘Artifact’: The segmentation is a result of image artifact and not an actual cell
-    1.	![Figure1](SegmentationTool_resources/readme_images/draw_on_dapi.png): this option allows for drawing a segmentation on the ‘B’ panel DAPI only image. (Drawing explained below)
-    1.	![Figure1](SegmentationTool_resources/readme_images/draw_on_membrane.png): this option allows for drawing a segmentation on the ‘B’ DAPI + Membrane image. (Drawing explained below)
+    1.	![Figure1](SegmentationTool_resources/readme_images/draw_on_dapi.PNG): this option allows for drawing a segmentation on the ‘B’ panel DAPI only image. (Drawing explained below)
+    1.	![Figure1](SegmentationTool_resources/readme_images/draw_on_membrane.PNG): this option allows for drawing a segmentation on the ‘B’ DAPI + Membrane image. (Drawing explained below)
 1.	Select ‘Next cell’
     1.	This jumps to the next cell that has not yet been reviewed 
        1.	Sometimes this means skipping cells  
-![Figure1](SegmentationTool_resources/readme_images/movement_panel.png)
+![Figure1](SegmentationTool_resources/readme_images/movement_panel.PNG)
 
 ### 6.3 Additional movement buttons
 1.	<img src="SegmentationTool_resources/icons/left_arrow_icon.svg" alt="left arrow" width="20"/>: this goes back one cell in the numeric ordering (shown in the figure header at the top of the page)
@@ -104,21 +104,21 @@ Once the first cell appears, the figure title will be populated with the image n
 
 ### 6.4 Display buttons
 1.	The brightness and the contrast of the DAPI and Membrane can be scaled separately. Select the marker of interest, then vary the appropriate parameter with the slider. Only one option can be selected at a time. When the option is selected the button turns green.  
-![Figure1](SegmentationTool_resources/readme_images/display_panel_colors.png)
+![Figure1](SegmentationTool_resources/readme_images/display_panel_colors.PNG)
 1.	<img src="SegmentationTool_resources/icons/show_a_b_seg_icon.png" alt="a/b seg" width="30"/>: Toggles the segmentation on and off for all four image stamps. The segmentation show is the original segmentation for either ‘A’ or ‘B’ respectively.
 1.	<img src="SegmentationTool_resources/icons/show_applied_seg_icon.png" alt="applied seg" width="30"/>: Toggles the already applied segmentation on and off for all four image stamps. This shows the reviewed cells or the cells in the joint overlap group (if it has not been removed). 
 
 ### 6.5 Additional flagging buttons
 Any combination of these options can be applied to a give cell pair.  
-![Figure1](SegmentationTool_resources/readme_images/additional_flag_options.png)
+![Figure1](SegmentationTool_resources/readme_images/additional_flag_options.PNG)
 1.	<img src="SegmentationTool_resources/icons/flag_icon.png" alt="flag icon" width="20"/>: adds a review flag to this cell. When the segmentation is finished and handed off for statistics or review by another person they can review these cells for edits. 
 1.	<img src="SegmentationTool_resources/icons/multi_nucleated_cell_icon.png" alt="multi-nucleated" width="30"/>: Indicates that the cell pair is part of a multi nucleated  cell
 1.	<img src="SegmentationTool_resources/icons/add_cell_icon.png" alt="add cell" width="30"/>: allows the user to add a new cell, see below
 1. <img src="SegmentationTool_resources/icons/trash_can_icon.png" alt="trash" width="20"/>: allows the user to select cells in the top left panel and remove them. Click again to stop removing cells.
-1. <img src="SegmentationTool_resources/readme_images/object_plane.png" alt="object plane" width="150"/>: Moves the cell above or below other cells (when drawing images in the additional windows, this is set after the cell is drawn)
+1. <img src="SegmentationTool_resources/readme_images/object_plane.PNG" alt="object plane" width="150"/>: Moves the cell above or below other cells (when drawing images in the additional windows, this is set after the cell is drawn)
 
 ### 6.6 Add cell window
-Opens the ‘Add cell window’, the main app will be shaded in and not usable when this window opens. The new window will look like this: <br> <br> <img src="SegmentationTool_resources/readme_images/add_cell_window.png" alt="add cell window" width="400"/> <br>
+Opens the ‘Add cell window’, the main app will be shaded in and not usable when this window opens. The new window will look like this: <br> <br> <img src="SegmentationTool_resources/readme_images/add_cell_window.PNG" alt="add cell window" width="400"/> <br>
 1.	The first time this option is selected a dialog with directions appears over the window. Click 'OK' to continue.
 1. Click on <img src="SegmentationTool_resources/icons/drawing_icon.png" alt="drawing" width="20"/> and wait for it to turn green in that UI to draw a cell. 
 1. There are two methods for drawing (see section 6.7 for more drawing help)
@@ -131,7 +131,7 @@ Opens the ‘Add cell window’, the main app will be shaded in and not usable w
     1. <img src="SegmentationTool_resources/icons/show_membrane_icon.png" alt="show membrane" width="30"/>: to toggle the membrane segmentation on and off.
 1.	To redraw a cell you will first need to delete it by selecting the trash can icon, then selecting that cell.
 1.	The number of cells drawn are recorded in the window header  
-![Figure1](SegmentationTool_resources/readme_images/tracking_number_of_drawn_cells.png)
+![Figure1](SegmentationTool_resources/readme_images/tracking_number_of_drawn_cells.PNG)
 1.	Once finished adding cells, select either <img src="SegmentationTool_resources/icons/done_icon.png" alt="accept" width="20"/> to accept all drawn cells or <img src="SegmentationTool_resources/icons/reject_icon.png" alt="reject" width="20"/> to reject drawn cells. A confirmation dialog will open either way.
 
 ### 6.7 Drawing feature
@@ -139,8 +139,8 @@ When one of the drawing options is selected
 1.	Move the cursor over the corresponding image. For the main app window (when selecting between A and B):
     1. Always use the right or 'B' side image to draw
     1. The top or bottom panel depends on the button used
-    1. ![Figure1](SegmentationTool_resources/readme_images/draw_on_dapi.png): will allow drawing on the top panel
-    1. ![Figure1](SegmentationTool_resources/readme_images/draw_on_membrane.png): allows drawing on the bottom panel.
+    1. ![Figure1](SegmentationTool_resources/readme_images/draw_on_dapi.PNG): will allow drawing on the top panel
+    1. ![Figure1](SegmentationTool_resources/readme_images/draw_on_membrane.PNG): allows drawing on the bottom panel.
 1.	There are two options for drawing the segmentation. 
     1.	Click and drag
         1.	Left click and hold
@@ -165,7 +165,7 @@ When the overlaps are computed, some of the cells are computationally determined
 ### 6.10 Finishing an image
 1.	When all cells in an image are reviewed, a prompt will open telling the user that all cell pairs have been review and that it is now time to review the whole image. The prompt will ask the user if the segmentation should be cleaned up. This will run an algorithm that detects if cells in the final segmentation results are occluding each other and removes these 'duplicate' cells. 
 1.	A new window will open, as below, which shows the whole image with similar drawing features as the ‘Add cell’ window. You will be able to see the applied segmentation on the whole image and identify any cells that may have been missed by both algorithms.  
-![Figure1](SegmentationTool_resources/readme_images/final_review.png)
+![Figure1](SegmentationTool_resources/readme_images/final_review.PNG)
 1.	Edit annotations by using the trash can icon to remove missegmented cells and the drawing utility to draw new ones. (6.7 has helpful hints on how to draw new cells)
 1.	Select <img src="SegmentationTool_resources/icons/done_icon.png" alt="accept" width="20"/> to accept all cells or <img src="SegmentationTool_resources/icons/reject_icon.png" alt="reject" width="20"/> to reject them.
 
