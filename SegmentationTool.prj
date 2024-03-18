@@ -8,17 +8,17 @@
       <file>${PROJECT_ROOT}\SegmentationTool_resources\icon_24.png</file>
       <file>${PROJECT_ROOT}\SegmentationTool_resources\icon_16.png</file>
     </param.icons>
-    <param.version>4.0.1</param.version>
+    <param.version>4.0.4</param.version>
     <param.authnamewatermark>Benjamin Green</param.authnamewatermark>
     <param.email>bgreen42@jh.edu</param.email>
-    <param.company>Astropath</param.company>
+    <param.company>AstroPath</param.company>
     <param.summary>This tool was developed to build a ground truth for cell segmentation in immunofluorescence data.</param.summary>
     <param.description>This program opens the machine learning segmentation for a specified images and loads the inform segementation of the corresponding image. The program also reads the component information from the inform segmentation image. The files must be in the specified format to find the corresponding images. The program then compares the cells between the two segmentation types and displays a cut out for each cell one at a time. The user can then specify whether they will choose the machine learning segmentation, the inform segmentation, or draw a new segmentation for the given cell.</param.description>
     <param.screenshot>${PROJECT_ROOT}\SegmentationTool_resources\splash.png</param.screenshot>
     <param.guid />
-    <param.installpath.string>\Astropath\SegmentationTool\</param.installpath.string>
+    <param.installpath.string>\AstroPath\SegmentationTool\</param.installpath.string>
     <param.installpath.combo>option.installpath.programfiles</param.installpath.combo>
-    <param.logo />
+    <param.logo>${PROJECT_ROOT}\SegmentationTool_resources\splash.png</param.logo>
     <param.install.notes />
     <param.target.install.notes />
     <param.intermediate>${PROJECT_ROOT}\SegmentationTool\for_testing</param.intermediate>
@@ -49,9 +49,7 @@
 	 input arguments</param.help.text>
     <unset>
       <param.guid />
-      <param.installpath.string />
       <param.installpath.combo />
-      <param.logo />
       <param.install.notes />
       <param.target.install.notes />
       <param.intermediate />
